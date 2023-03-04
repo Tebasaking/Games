@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\Game">
+      <UniqueIdentifier>{55584c4a-4baf-4d32-bb7e-9077ff266b3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System">
+      <UniqueIdentifier>{4508be53-d2a4-42da-8f88-8747313c1bc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\System">
+      <UniqueIdentifier>{5319966c-6578-4442-be57-ee53a4fd8f41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game">
+      <UniqueIdentifier>{ccd74924-548e-4807-84cb-bf79d20b7b95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\stage">
+      <UniqueIdentifier>{3ac05710-e06d-4ac3-be08-b146eba32d79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\SubSystem">
+      <UniqueIdentifier>{5192de6a-9cee-4193-87c0-7700923a18c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\stage">
+      <UniqueIdentifier>{0187cd85-5594-41cd-8b83-ab430ed8fc36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\SubSystem">
+      <UniqueIdentifier>{b80bfadb-dd93-4840-8566-277ca95fcc6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System\タイトルなど">
+      <UniqueIdentifier>{9f241dfb-cf32-496f-a2a0-8700fea20e52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\System\タイトルなど">
+      <UniqueIdentifier>{2b079735-24ad-4225-8add-594726c698ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System\メインシステム">
+      <UniqueIdentifier>{da26fe7e-427f-4af3-b5d2-2a6bbb8d38cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\System\メインシステム">
+      <UniqueIdentifier>{0cf74a90-51a7-4be7-946d-7380aa10e6f1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="billboard.cpp">
+      <Filter>ソース ファイル\Game\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>ソース ファイル\Game\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Kitchen.cpp">
+      <Filter>ソース ファイル\Game\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="model.cpp">
+      <Filter>ソース ファイル\Game\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="cylinder.cpp">
+      <Filter>ソース ファイル\Game\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="effect.cpp">
+      <Filter>ソース ファイル\Game\SubSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>ソース ファイル\Game\SubSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="objectline.cpp">
+      <Filter>ソース ファイル\Game\SubSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="polygon.cpp">
+      <Filter>ソース ファイル\Game\SubSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="shadow.cpp">
+      <Filter>ソース ファイル\Game\SubSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="sphere.cpp">
+      <Filter>ソース ファイル\Game\SubSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="wall.cpp">
+      <Filter>ソース ファイル\Game\SubSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>ソース ファイル\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="contain.cpp">
+      <Filter>ソース ファイル\Game\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>ソース ファイル\System\タイトルなど</Filter>
+    </ClCompile>
+    <ClCompile Include="fade.cpp">
+      <Filter>ソース ファイル\System\タイトルなど</Filter>
+    </ClCompile>
+    <ClCompile Include="gameover.cpp">
+      <Filter>ソース ファイル\System\タイトルなど</Filter>
+    </ClCompile>
+    <ClCompile Include="result.cpp">
+      <Filter>ソース ファイル\System\タイトルなど</Filter>
+    </ClCompile>
+    <ClCompile Include="title.cpp">
+      <Filter>ソース ファイル\System\タイトルなど</Filter>
+    </ClCompile>
+    <ClCompile Include="meshfield.cpp">
+      <Filter>ソース ファイル\System\メインシステム</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>ソース ファイル\System\メインシステム</Filter>
+    </ClCompile>
+    <ClCompile Include="file.cpp">
+      <Filter>ソース ファイル\System\メインシステム</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>ソース ファイル\System\メインシステム</Filter>
+    </ClCompile>
+    <ClCompile Include="light.cpp">
+      <Filter>ソース ファイル\System\メインシステム</Filter>
+    </ClCompile>
+    <ClCompile Include="line.cpp">
+      <Filter>ソース ファイル\System\メインシステム</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル\System\メインシステム</Filter>
+    </ClCompile>
+    <ClCompile Include="kitchentimer.cpp">
+      <Filter>ソース ファイル\Game\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="order.cpp">
+      <Filter>ソース ファイル\Game\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="cuttingtimer.cpp">
+      <Filter>ソース ファイル\Game\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="gametimer.cpp">
+      <Filter>ソース ファイル\Game\SubSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="score.cpp">
+      <Filter>ソース ファイル\Game\SubSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ordertimer.cpp">
+      <Filter>ソース ファイル\Game\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="titlemodel.cpp">
+      <Filter>ソース ファイル\System\タイトルなど</Filter>
+    </ClCompile>
+    <ClCompile Include="ready.cpp">
+      <Filter>ソース ファイル\Game\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="sound.cpp">
+      <Filter>ソース ファイル\System\メインシステム</Filter>
+    </ClCompile>
+    <ClCompile Include="ranking.cpp">
+      <Filter>ソース ファイル\System\タイトルなど</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="player.h">
+      <Filter>ヘッダー ファイル\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="billboard.h">
+      <Filter>ヘッダー ファイル\Game\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>ヘッダー ファイル\Game\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Kitchen.h">
+      <Filter>ヘッダー ファイル\Game\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>ヘッダー ファイル\Game\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="cylinder.h">
+      <Filter>ヘッダー ファイル\Game\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>ヘッダー ファイル\Game\SubSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="effect.h">
+      <Filter>ヘッダー ファイル\Game\SubSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="objectline.h">
+      <Filter>ヘッダー ファイル\Game\SubSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="polygon.h">
+      <Filter>ヘッダー ファイル\Game\SubSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="shadow.h">
+      <Filter>ヘッダー ファイル\Game\SubSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="sphere.h">
+      <Filter>ヘッダー ファイル\Game\SubSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="wall.h">
+      <Filter>ヘッダー ファイル\Game\SubSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="contain.h">
+      <Filter>ヘッダー ファイル\Game\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>ヘッダー ファイル\System\タイトルなど</Filter>
+    </ClInclude>
+    <ClInclude Include="gameover.h">
+      <Filter>ヘッダー ファイル\System\タイトルなど</Filter>
+    </ClInclude>
+    <ClInclude Include="result.h">
+      <Filter>ヘッダー ファイル\System\タイトルなど</Filter>
+    </ClInclude>
+    <ClInclude Include="title.h">
+      <Filter>ヘッダー ファイル\System\タイトルなど</Filter>
+    </ClInclude>
+    <ClInclude Include="fade.h">
+      <Filter>ヘッダー ファイル\System\タイトルなど</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>ヘッダー ファイル\System\メインシステム</Filter>
+    </ClInclude>
+    <ClInclude Include="file.h">
+      <Filter>ヘッダー ファイル\System\メインシステム</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>ヘッダー ファイル\System\メインシステム</Filter>
+    </ClInclude>
+    <ClInclude Include="light.h">
+      <Filter>ヘッダー ファイル\System\メインシステム</Filter>
+    </ClInclude>
+    <ClInclude Include="line.h">
+      <Filter>ヘッダー ファイル\System\メインシステム</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>ヘッダー ファイル\System\メインシステム</Filter>
+    </ClInclude>
+    <ClInclude Include="meshfield.h">
+      <Filter>ヘッダー ファイル\System\メインシステム</Filter>
+    </ClInclude>
+    <ClInclude Include="kitchentimer.h">
+      <Filter>ヘッダー ファイル\Game\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="order.h">
+      <Filter>ヘッダー ファイル\Game\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="cuttingtimer.h">
+      <Filter>ヘッダー ファイル\Game\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="gametimer.h">
+      <Filter>ヘッダー ファイル\Game\SubSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="score.h">
+      <Filter>ヘッダー ファイル\Game\SubSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ordertimer.h">
+      <Filter>ヘッダー ファイル\Game\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="titlemodel.h">
+      <Filter>ヘッダー ファイル\System\タイトルなど</Filter>
+    </ClInclude>
+    <ClInclude Include="sound.h">
+      <Filter>ヘッダー ファイル\System\メインシステム</Filter>
+    </ClInclude>
+    <ClInclude Include="ready.h">
+      <Filter>ヘッダー ファイル\Game\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="ranking.h">
+      <Filter>ヘッダー ファイル\System\タイトルなど</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

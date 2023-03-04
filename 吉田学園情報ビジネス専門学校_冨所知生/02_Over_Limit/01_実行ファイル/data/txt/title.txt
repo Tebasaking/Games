@@ -1,0 +1,28 @@
+#==============================================================================
+#
+# 『タイトルのモデル設置』スクリプトファイル [model.txt]
+# Author : TOMIDOKORO TOMOKI
+#
+#==============================================================================
+START
+SCRIPT
+
+MODEL_FILENAME data/MODEL/Title/title.x
+
+MODELSET
+POS 0.0 10.0 -3.0
+END_MODELSET
+
+MODEL_FILENAME data/MODEL/Title/bg_test.x
+
+MODELSET
+POS 0.0 10.0 20.0
+END_MODELSET
+
+MODEL_FILENAME data/MODEL/Title/grass.x
+
+MODELSET
+POS 0.0 0.0 0.0
+END_MODELSET
+
+END_SCRIPT

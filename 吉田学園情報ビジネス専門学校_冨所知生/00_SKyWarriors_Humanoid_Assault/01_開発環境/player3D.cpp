@@ -32,6 +32,7 @@
 #include "effect.h"
 #include "playerUI.h"
 #include "camera_player.h"
+#include "mouse.h"
 
 //=========================================
 //コンストラクタ
@@ -544,13 +545,23 @@ void CPlayer3D::Bullet(D3DXVECTOR3 pos)
 	{// DelayがMAXになるまで加算する
 		m_BulletDelay++;
 	}
-
+	
 	if (m_Nearest_object && m_mode == (CPlayer3D::PLAYER_MODE)CPlayerManager::GetMode())
 	{
 		if (!(m_Nearest_object->GetSize().x == 0.0f && m_Nearest_object->GetSize().y == 0.0f))
 		{
 			// クリックの情報を保管
-			bool hasJoyPadA = pKeyboard->Trigger(JOYPAD_A,0);
+			bool hasJoyPadA;
+			
+			if (pKeyboard->GetAcceptJoyPadCount() != 0)
+			{
+				hasJoyPadA = pKeyboard->Trigger(JOYPAD_A, 0);
+			}
+			else
+			{
+				CMouse *pMouse = CApplication::GetMouse();
+				hasJoyPadA = pMouse->GetPress(CMouse::MOUSE_KEY_LEFT);
+			}
 
 			if (hasJoyPadA)
 			{
@@ -567,10 +578,10 @@ void CPlayer3D::Bullet(D3DXVECTOR3 pos)
 					m_BulletDelay = 0;
 				}
 			}
-			else if (pKeyboard->Trigger(DIK_SPACE))
+			/*else if (pKeyboard->Trigger(DIK_SPACE))
 			{
 				CBullet::Create(m_pos, m_quaternion, m_Nearest_object);
-			}
+			}*/
 		}
 	}
 

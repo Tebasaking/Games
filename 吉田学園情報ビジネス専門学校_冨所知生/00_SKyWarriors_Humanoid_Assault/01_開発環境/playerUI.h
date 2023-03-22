@@ -41,7 +41,7 @@ public:
 	bool GetAlert() { return m_bAlert; }
 
 private:
-	CObject2D	*pObject2D[2];
+	CObject2D	*pObject2D[3];
 	CSerihu		*pStop;										// ストップを表示する文章
 	CNumber		*m_pSpeedNum[SPEED_DIGITS];					// ナンバー1
 	CNumber		*m_pAltitude[ALTITUDE_DIGITS];				// ナンバー1

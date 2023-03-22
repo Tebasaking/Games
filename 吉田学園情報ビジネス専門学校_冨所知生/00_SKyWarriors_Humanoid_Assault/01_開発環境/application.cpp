@@ -37,6 +37,7 @@
 #include "time_over.h"
 #include "game_over.h"
 #include "tutorial.h"
+#include "mouse.h"
 
 CDebugProc *CApplication::m_pDebug = nullptr;
 CRender *CApplication::m_pRender = nullptr;
@@ -56,6 +57,7 @@ CApplication::MODE CApplication::m_NextMode = MODE_MAX;
 CApplication::MODE CApplication::m_mode = MODE_MAX;
 
 LPD3DXEFFECT CApplication::m_pEffect = nullptr;
+CMouse* CApplication::m_pMouse = nullptr;
 
 //=========================================
 // コンストラクタ
@@ -83,6 +85,7 @@ HRESULT CApplication::Init(HINSTANCE hInstance,HWND hWnd)
 	m_pDebug = new CDebugProc;
 	m_pTexture3D = new CTexture3D;
 	m_pTitle = new CCameraTitle;
+	m_pMouse = new CMouse;
 
 	if (FAILED(m_pRender->Init(hWnd, false)))
 	{// 初期化処理が失敗した場合
@@ -101,6 +104,10 @@ HRESULT CApplication::Init(HINSTANCE hInstance,HWND hWnd)
 	CInput::Create();
 
 	if (FAILED(CInput::GetKey()->Init(hInstance, hWnd)))
+	{
+		return E_FAIL;
+	}
+	if (FAILED(m_pMouse->Init(hInstance, hWnd)))
 	{
 		return E_FAIL;
 	}
@@ -164,6 +171,8 @@ void CApplication::Update()
 {
 	//入力処理の更新処理
 	CInput::GetKey()->Update();
+
+	m_pMouse->Update();
 
 	// モードの変更
 	ChangeMode();
@@ -279,6 +288,12 @@ void CApplication::Uninit()
 		m_pMode->Uninit();
 		//delete m_pMode;
 		//m_pMode = nullptr;
+	}
+	if (m_pMouse != nullptr)
+	{
+		m_pMouse->Uninit();
+		delete m_pMouse;
+		m_pMouse = nullptr;
 	}
 
 	// オブジェクトの終了処理

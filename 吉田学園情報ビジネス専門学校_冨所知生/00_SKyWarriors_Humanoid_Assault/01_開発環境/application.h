@@ -74,6 +74,7 @@ public:
 	static CTexture3D *GetTexture3D()			{ return m_pTexture3D; }
 	static CSound *GetSound()					{ return m_pSound; }
 	static LPD3DXEFFECT GetShader()				{ return m_pEffect; }
+	static CMouse* GetMouse()					{ return m_pMouse; }
 
 private:
 	static CDebugProc		*m_pDebug;
@@ -87,6 +88,7 @@ private:
 	static CMode			*m_pMode;
 	static CTexture3D		*m_pTexture3D;
 	static CSound			*m_pSound;
+	static CMouse			*m_pMouse;			// マウス
 	static CCameraTitle		*m_pTitle;
 	static LPD3DXEFFECT		m_pEffect;			// シェーダー
 	bool					m_bCheckViewport;

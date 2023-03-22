@@ -50,7 +50,16 @@ HRESULT CTutorial_Pic::Init(const D3DXVECTOR3 &pos)
 	}
 	pObject2D[0]->SetScale(D3DXVECTOR3(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.5f, 0.0f));
 
-	pObject2D[0]->SetTexture(CTexture::TEXTURE_TUTORIAL_000);
+	CInput *pKeyboard = CInput::GetKey();
+	if (pKeyboard->GetAcceptJoyPadCount() != 0)
+	{
+		pObject2D[0]->SetTexture(CTexture::TEXTURE_TUTORIAL_000);
+	}
+	else
+	{
+		pObject2D[0]->SetTexture(CTexture::TEXTURE_TUTORIAL_000_MOUSE);
+	}
+
 	pObject2D[1]->SetTexture(CTexture::TEXTURE_TUTORIAL_001);
 	pObject2D[2]->SetTexture(CTexture::TEXTURE_TUTORIAL_002);
 

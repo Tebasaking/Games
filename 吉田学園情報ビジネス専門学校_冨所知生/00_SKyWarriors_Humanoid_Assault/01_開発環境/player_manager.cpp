@@ -60,14 +60,14 @@ void CPlayerManager::Update()
 	// キーボードの取得
 	CInput *pKeyboard = CInput::GetKey();
 	
-	// エンターキーが押された
-	if (pKeyboard->Trigger(DIK_RETURN))
-	{
-		CSound::PlaySound(CSound::SOUND_SE_TRANSFORM);
+	//// エンターキーが押された
+	//if (pKeyboard->Trigger(DIK_RETURN))
+	//{
+	//	CSound::PlaySound(CSound::SOUND_SE_TRANSFORM);
 
-		// m_modeがFLYの時はROBOTに、ROBOTの時はFLYにする
-		m_mode = (m_mode == MODE_FLY) ? MODE_ROBOT : MODE_FLY;
-	}
+	//	// m_modeがFLYの時はROBOTに、ROBOTの時はFLYにする
+	//	m_mode = (m_mode == MODE_FLY) ? MODE_ROBOT : MODE_FLY;
+	//}
 }
 
 //=========================================

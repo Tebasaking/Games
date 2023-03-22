@@ -120,11 +120,11 @@ void CRender::Update()
 
 	CInput *pKeyboard = CInput::GetKey();
 	//ワイヤーフレーム
-	if (pKeyboard->Trigger(DIK_F1))
-	{
-		m_Wire = !m_Wire;
-		m_pD3DDevice->SetRenderState(D3DRS_FILLMODE, m_Wire ? D3DFILL_WIREFRAME : D3DFILL_FORCE_DWORD);
-	}
+	//if (pKeyboard->Trigger(DIK_F1))
+	//{
+	//	m_Wire = !m_Wire;
+	//	m_pD3DDevice->SetRenderState(D3DRS_FILLMODE, m_Wire ? D3DFILL_WIREFRAME : D3DFILL_FORCE_DWORD);
+	//}
 }
 
 //=========================================

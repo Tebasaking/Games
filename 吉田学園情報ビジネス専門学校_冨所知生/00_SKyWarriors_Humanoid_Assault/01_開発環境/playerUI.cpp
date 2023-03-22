@@ -56,7 +56,7 @@ HRESULT CPlayerUI::Init(const D3DXVECTOR3 &pos)
 	m_pGage->SetTexture(CTexture::TEXTURE_GAGE);
 	m_pGageBox->SetTexture(CTexture::TEXTURE_GAGE_BOX);
 
-	for (int nCnt = 0; nCnt < 2; nCnt++)
+	for (int nCnt = 0; nCnt < 3; nCnt++)
 	{
 		pObject2D[nCnt] = CObject2D::Create(D3DXVECTOR3(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.5f, 0.0f), 3);
 		pObject2D[nCnt]->SetScale(D3DXVECTOR3(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.5f, 0.0f));
@@ -64,6 +64,15 @@ HRESULT CPlayerUI::Init(const D3DXVECTOR3 &pos)
 
 	pObject2D[0]->SetTexture(CTexture::TEXTURE_UI_SPEED_AND_ALT);
 	pObject2D[1]->SetTexture(CTexture::TEXTURE_UI_WEAPON);
+
+	if (CApplication::GetMode() == CApplication::MODE_GAME)
+	{
+		pObject2D[2]->SetTexture(CTexture::TEXTURE_UI_MISSION);
+	}
+	else
+	{
+		pObject2D[2]->SetTexture(CTexture::TEXTURE_UI_SPEED_AND_ALT);
+	}
 
 	for (int nCnt = 0; nCnt < SPEED_DIGITS; nCnt++)
 	{
@@ -175,7 +184,7 @@ void CPlayerUI::Uninit()
 		}
 	}
 
-	for (int nCnt = 0; nCnt < 2; nCnt++)
+	for (int nCnt = 0; nCnt < 3; nCnt++)
 	{
 		pObject2D[nCnt]->Uninit();
 		pObject2D[nCnt] = nullptr;
@@ -270,6 +279,8 @@ void CPlayerUI::SetAlertColor(COLOR col)
 	// F‚ÌÝ’è
 	pObject2D[0]->SetColor(Color);
 	pObject2D[1]->SetColor(Color);
+	pObject2D[2]->SetColor(Color);
+
 	m_pGage->SetColor(Color);
 	m_pGageBox->SetColor(Color);
 

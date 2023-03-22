@@ -158,8 +158,15 @@ void CCameraPlayer::Update(void)
 			switch (m_mode)
 			{
 			case TYPE_FREE:
-				JoyPadMove();	// ジョイパッド移動
-				MouseMove();		// マウス移動
+				if (pKeyboard->GetAcceptJoyPadCount() != 0)
+				{
+					JoyPadMove();	// ジョイパッド移動
+				}
+				else
+				{
+					MouseMove();		// マウス移動
+				}
+
 				FreeMove();			// 移動
 				break;
 
@@ -270,22 +277,27 @@ void CCameraPlayer::Update(void)
 void CCameraPlayer::Rotate()
 {
 	// 入力情報の取得
-	static const float MIN_MOUSE_MOVED = 2.0f;		// この値以上動かさないと反応しない
+	static const float MIN_MOUSE_MOVED = 1.5f;		// この値以上動かさないと反応しない
 
-	//if (!(D3DXVec3Length(&m_rotMove) > MIN_MOUSE_MOVED) && !(D3DXVec3Length(&m_rotMove) < -MIN_MOUSE_MOVED))
-	//{
-	//	return;
-	//}
+	CInput *pKeyboard = CInput::GetKey();
 
-	//// デッドゾーンの設定
-	//if (m_rotMove.x >= -MIN_MOUSE_MOVED && m_rotMove.x <= MIN_MOUSE_MOVED)
-	//{
-	//	m_rotMove.x = 0.0f;
-	//}
-	//if (m_rotMove.y >= -MIN_MOUSE_MOVED && m_rotMove.y <= MIN_MOUSE_MOVED)
-	//{
-	//	m_rotMove.y = 0.0f;
-	//}
+	if (pKeyboard->GetAcceptJoyPadCount() == 0)
+	{
+		if (!(D3DXVec3Length(&m_rotMove) > MIN_MOUSE_MOVED) && !(D3DXVec3Length(&m_rotMove) < -MIN_MOUSE_MOVED))
+		{
+			return;
+		}
+
+		// デッドゾーンの設定
+		if (m_rotMove.x >= -MIN_MOUSE_MOVED && m_rotMove.x <= MIN_MOUSE_MOVED)
+		{
+			m_rotMove.x = 0.0f;
+		}
+		if (m_rotMove.y >= -MIN_MOUSE_MOVED && m_rotMove.y <= MIN_MOUSE_MOVED)
+		{
+			m_rotMove.y = 0.0f;
+		}
+	}
 
 	/* ↓指定した長さ以上で動かしてる↓ */
 
@@ -663,19 +675,19 @@ void CCameraPlayer::ShoulderMove()
 //=========================================
 void CCameraPlayer::MouseMove(void)
 {
-	//CMouse *pMouse = CApplication::GetMouse();
+	CMouse *pMouse = CApplication::GetMouse();
 
 	// 回転のベクトルを設定。
-	//m_Dest = D3DXVECTOR3(pMouse->GetMouseCursorMove().y, pMouse->GetMouseCursorMove().x, pMouse->GetMouseCursorMove().z);
+	m_Dest = D3DXVECTOR3(pMouse->GetMouseCursorMove().y, pMouse->GetMouseCursorMove().x, pMouse->GetMouseCursorMove().z);
 
-	//// クリックの情報を保管
-	//bool hasRightClick = pMouse->GetPress(CMouse::MOUSE_KEY_RIGHT);
+	// クリックの情報を保管
+	bool hasRightClick = pMouse->GetPress(CMouse::MOUSE_KEY_RIGHT);
 
-	//if (hasRightClick)
-	//{
-	//	Rotate();
-	//	VPosRotate();
-	//}
+	if (hasRightClick)
+	{
+		Rotate();
+		VPosRotate();
+	}
 }
 
 //=========================================

@@ -54,8 +54,15 @@ HRESULT CTutorial::Init(const D3DXVECTOR3 &pos)
 
 	pObject2D->SetScale(D3DXVECTOR3(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.5f, 0.0f));
 
-	pObject2D->SetTexture(CTexture::TEXTURE_TUTORIAL_GAME);
-
+	CInput *pKeyboard = CInput::GetKey();
+	if (pKeyboard->GetAcceptJoyPadCount() != 0)
+	{
+		pObject2D->SetTexture(CTexture::TEXTURE_TUTORIAL_GAME);
+	}
+	else
+	{
+		pObject2D->SetTexture(CTexture::TEXTURE_TUTORIAL_GAME_MOUSE);
+	}
 	// アラートの生成
 	m_pAlert = CAlert::Create(D3DXVECTOR3(0.0f, 0.0f, 0.0f));
 
@@ -99,10 +106,10 @@ void CTutorial::Update()
 	//float Y = SCREEN_HEIGHT * 0.5f;
 
 
-	if (pKeyboard->Trigger(JOYPAD_START))
+	if (pKeyboard->Trigger(JOYPAD_START) || pKeyboard->Trigger(DIK_RETURN))
 	{
 		//モードの設定
-			CFade::SetFade(CApplication::MODE_TITLE);
+		CFade::SetFade(CApplication::MODE_TITLE);
 	}
 
 	//else if (m_Select == 3)
